@@ -1,0 +1,146 @@
+@import "reset.scss";
+@import "layout.scss";
+
+.main {
+  // min-width: 950px;
+}
+
+.navbar {
+  min-width: 480px;
+  padding-top: 14px;
+  background: #eff4fa;
+  border-bottom: 1px solid #d6dfea;
+  height: 63px;
+  box-sizing: border-box;
+}
+
+.logo-picture {
+  margin-left: 40px;
+  width: 182px;
+  height: 35px;
+  text-indent: -9999em;
+  background: url("../images/logo.png") no-repeat;
+}
+
+.login-link {
+  line-height: 30px;
+  margin-right: 40px;
+}
+
+.separator {
+  color: #1d5494;
+  font-size: 12px;
+}
+
+.link-text {
+  text-decoration: none;
+  font-size: 12px;
+  color: #1d5494;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.content {
+  min-width: 924px;
+  padding: 40px 25px;
+}
+
+.content-box {
+  margin: 0 auto;
+  padding: 40px 25px;
+  min-height: 420px;
+  width: 915px;
+}
+
+.login-picture {
+  padding: 15px;
+}
+
+.loginbox {
+  width: 335px;
+  height: 388px;
+  border: 1px solid #a0b1c4;
+  border-radius: 5px;
+}
+
+.loginbox-navbar {
+  line-height: 50px;
+  border-bottom: 1px solid #d6dfea;
+  padding-left: 20px;
+
+  .login-mode {
+    margin-left: 45px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #999;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  .lm-active {
+    color: #000;
+    border-bottom: 1px solid #465767;
+    padding-bottom: 15px;
+  }
+}
+
+.loginbox-content {
+  padding: 40px 25px 0;
+}
+
+.login-form {
+  .login-info {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    background: none;
+    border: 1px solid #96a5b4;
+    height: 38px;
+    width: 282px;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1000px #fff inset;
+
+    &[placeholder] {
+      color:#847777;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    &[placeholder]:focus {
+      opacity: .5;
+      border: 1px solid blue;
+    }
+  }
+}
+
+.login-auto {
+  margin-top: 10px;
+  .login-auto-text {
+    text-decoration: none;
+    color: #000;
+
+    label {
+      font-size: 12px;
+    }
+  }
+}
+
+.footer {
+  min-width: 480px;
+  position: absolute;
+  bottom: 0;
+  box-sizing: border-box;
+  text-align: center;
+  width: 100%;
+  background: #eff4fa;
+  border-top: 1px solid #d6dfea;
+  line-height: 30px;
+  padding: 4px;
+
+  .copyright {
+    color: #868686;
+    font-size: 12px;
+  }
+}

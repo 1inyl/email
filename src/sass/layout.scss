@@ -1,0 +1,53 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-weight: 100;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100%;
+}
+
+h3, h5, h6, label, p, span, li, a {
+  font-weight: 100;
+}
+
+input {
+  outline: none;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:after,
+.clearfix:before {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
