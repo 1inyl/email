@@ -7,7 +7,8 @@ window.onload = function () {
   var jsUserInput = document.getElementById('jsUserInput')
   var jsEmailList = document.getElementById('jsEmailList')
   var emailList = jsEmailList.querySelectorAll('li')
-  var err = document.getElementById('err')
+  // var err = document.getElementById('err')
+  var liIndex = 0
 
   var idHidden = function () {
     jsQuickLogin.setAttribute('class', 'login-mode lm-active')
@@ -29,15 +30,9 @@ window.onload = function () {
   var cleanToggle = function () {
     if (jsUserInput.value.length > 0) {
       jsClean.setAttribute('class', 'id-clean')
-
     } else {
       jsClean.setAttribute('class', 'id-clean hide')
     }
-  }
-
-  jsClean.onclick = function () {
-    jsUserInput.value = ''
-    cleanToggle()
   }
 
   var autoInput = function () {
@@ -62,9 +57,32 @@ window.onload = function () {
     }
   }
 
+
+
+  jsClean.onclick = function () {
+    jsUserInput.value = ''
+    autoInput()
+    cleanToggle()
+  }
+
   jsUserInput.oninput = function () {
     autoInput()
     cleanToggle()
   }
 
+  jsUserInput.onblur = function () {
+    regExp()
+  }
+
+  function regExp() {
+    var notNum = isNaN(jsUserInput.value)
+    var userInner = jsUserInput.value
+    var reg1 = userInner.indexOf('@')
+      if (notNum === true && reg1 > -1) {
+        return
+    } else if (notNum === true) {
+      userInner = jsUserInput.value + '@qq.com'
+      jsUserInput.value = userInner
+    }
+  }
 }
