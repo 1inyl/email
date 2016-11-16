@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>login</title>
   <link rel="stylesheet" href="dist/css/index.css" media="screen" title="no title">
 </head>
+
 <body>
   <div class="main">
     <div class="header">
       <div class="navbar clearfix">
-        <a class="logo-picture block fl" href="#">logo</a>
+        <a class="logo-picture block fl" href="#nogo">logo</a>
         <div class="login-link fr">
-          <a class="link-text" href="#">基本版</a><span class="separator">&nbsp;|</span>
-          <a class="link-text" href="#">English</a><span class="separator">&nbsp;|</span>
-          <a class="link-text" href="#">手机版</a><span class="separator">&nbsp;|</span>
-          <a class="link-text" href="#">企业邮箱</a>
+          <a class="link-text" href="#nogo">基本版</a><span class="separator">&nbsp;|</span>
+          <a class="link-text" href="#nogo">English</a><span class="separator">&nbsp;|</span>
+          <a class="link-text" href="#nogo">手机版</a><span class="separator">&nbsp;|</span>
+          <a class="link-text" href="#nogo">企业邮箱</a>
         </div>
       </div>
     </div>
@@ -25,48 +27,73 @@
         </div>
         <div class="loginbox fr">
           <div class="loginbox-navbar">
-            <a class="login-mode" href="#">快速登录</a>
-            <a class="login-mode lm-active" href="#">帐号密码登录</a>
+            <a id="jsQuickLogin" class="login-mode" href="#nogo">快速登录</a>
+            <a id="jsIdLogin" class="login-mode lm-active" href="#nogo">帐号密码登录</a>
           </div>
           <div class="loginbox-content">
-            <div class="login-tips">
-
+            <!-- 错误提示文本区 -->
+            <div class="tips hide"></div>
+            <!-- 二维码登录 -->
+            <div class="login-code hide" id="jsCode">
+              <span class="safety block">安全登录，防止被盗</span>
+              <div class="code-picture">
+                <img src="dist/images/code.png" alt="code" />
+              </div>
+              <label class="code-info block">扫描二维码登录</label>
+              <div class="login-auto-code">
+                <input id="check-status" type="checkbox" name="auto"><label for="check-status"> 下次自动登录</label>
+              </div>
+              <div class="loginbox-setbar-code">
+                <a href="#nogo" class="link-text">注册新帐号</a><span class="separator">&nbsp;|</span>
+                <a href="#nogo" class="link-text">意见反馈</a>
+              </div>
             </div>
-            <div class="login-form">
-              <form class="" action="index.html" method="post">
-                <div class="username">
-                  <input class="login-info" type="text" name="username" placeholder="支持QQ号/邮箱/手机号登录">
-                </div>
-                <div class="password">
-                  <input class="login-info" type="text" name="password" placeholder="QQ密码">
-                </div>
-                <div class="login-auto">
-                  <a class="login-auto-text" href="#"><input id="check-status" type="checkbox" name="auto"><label for="check-status"> 下次自动登录</span></a>
-                </div>
-                <div class="submit">
-
-                </div>
-              </form>
+            <!-- 帐号密码登陆 -->
+            <div class="login-id" id="jsId">
+              <div class="login-form">
+                <form action="index.html" method="post">
+                  <div class="username">
+                    <input class="login-info" id="jsUserInput" type="text" name="username" placeholder="支持QQ号/邮箱/手机号登录">
+                    <label class="id-clean hide" id="jsClean"></label>
+                  </div>
+                  <ul class="email-list hide" id="jsEmailList">
+                    <li id="@qq.com">@qq.com</li>
+                    <li id="@vip.qq.com">@vip.qq.com</li>
+                    <li id="@foxmail.com">@foxmail.com</li>
+                  </ul>
+                  <div class="password">
+                    <input class="login-info" type="password" name="password" placeholder="QQ密码">
+                  </div>
+                  <div class="login-auto">
+                    <input id="check-status" type="checkbox" name="auto"><label for="check-status"> 下次自动登录</label>
+                  </div>
+                  <button class="btn-submit" type="submit" name="submit">登 录</button>
+                </form>
+              </div>
+              <div class="loginbox-setbar">
+                <a href="#nogo" class="link-text">忘记密码？</a><span class="separator">&nbsp;|</span>
+                <a href="#nogo" class="link-text">注册新帐号</a><span class="separator">&nbsp;|</span>
+                <a href="#nogo" class="link-text">意见反馈</a>
+              </div>
             </div>
           </div>
-          <div class="loginbox-setbar">
 
-          </div>
         </div>
       </div>
     </div>
     <div class="footer">
-        <a href="#" class="link-text">关于腾讯</a><span class="separator">&nbsp;|</span>
-        <a href="#" class="link-text">服务条款</a><span class="separator">&nbsp;|</span>
-        <a href="#" class="link-text">客服中心</a><span class="separator">&nbsp;|</span>
-        <a href="#" class="link-text">联系我们</a><span class="separator">&nbsp;|</span>
-        <a href="#" class="link-text">帮助中心</a><span class="separator">&nbsp;|</span>
-        <span class="copyright">©1998 - 1016 Te33ent Inc. All Rights Reserved.</span>
+      <a href="#nogo" class="link-text">关于腾讯</a><span class="separator">&nbsp;|</span>
+      <a href="#nogo" class="link-text">服务条款</a><span class="separator">&nbsp;|</span>
+      <a href="#nogo" class="link-text">客服中心</a><span class="separator">&nbsp;|</span>
+      <a href="#nogo" class="link-text">联系我们</a><span class="separator">&nbsp;|</span>
+      <a href="#nogo" class="link-text">帮助中心</a><span class="separator">&nbsp;|</span>
+      <span class="copyright">©1998 - 1016 Te33ent Inc. All Rights Reserved.</span>
     </div>
   </div>
 
 
 
-<script src="dist/js/index.js" charset="utf-8"></script>
+  <script src="dist/js/index.js" charset="utf-8"></script>
 </body>
+
 </html>
