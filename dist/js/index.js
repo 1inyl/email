@@ -10,6 +10,7 @@ window.onload = function () {
   var jsUserInput = document.getElementById('jsUserInput');
   var jsEmailList = document.getElementById('jsEmailList');
   var emailList = jsEmailList.querySelectorAll('li');
+  var err = document.getElementById('err');
 
   var idHidden = function idHidden() {
     jsQuickLogin.setAttribute('class', 'login-mode lm-active');
@@ -36,7 +37,10 @@ window.onload = function () {
     }
   };
 
-  jsUserInput.oninput = cleanToggle;
+  jsClean.onclick = function () {
+    jsUserInput.value = '';
+    cleanToggle();
+  };
 
   var autoInput = function autoInput() {
     var userName = jsUserInput.value;
@@ -49,8 +53,8 @@ window.onload = function () {
         var target = evt.target || evt.srcElement;
         Array.prototype.forEach.call(emailList, function (li, index) {
           if (li === target) {
-            userName = emailList[index];
-            jsUserInput.value = userName.id;
+            userName = userName + emailList[index].id;
+            jsUserInput.value = userName;
             jsEmailList.setAttribute('class', 'email-list hide');
           }
         });
@@ -59,7 +63,11 @@ window.onload = function () {
       jsEmailList.setAttribute('class', 'email-list hide');
     }
   };
-  jsUserInput.oninput = autoInput;
+
+  jsUserInput.oninput = function () {
+    autoInput();
+    cleanToggle();
+  };
 };
 
 },{}]},{},[1])
