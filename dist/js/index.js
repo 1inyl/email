@@ -11,7 +11,7 @@ window.onload = function () {
   var jsEmailList = document.getElementById('jsEmailList');
   var emailList = jsEmailList.querySelectorAll('li');
   // var err = document.getElementById('err')
-  var liIndex = 0;
+  // var liIndex = 0
 
   var idHidden = function idHidden() {
     jsQuickLogin.setAttribute('class', 'login-mode lm-active');
@@ -41,7 +41,10 @@ window.onload = function () {
   var autoInput = function autoInput() {
     var userName = jsUserInput.value;
     var reg = userName.indexOf('@');
-    if (reg > -1) {
+    var reg1 = userName.indexOf('.');
+    if (reg > -1 && reg1 > reg + 1) {
+      jsEmailList.setAttribute('class', 'email-list hide');
+    } else if (reg > -1) {
       jsEmailList.setAttribute('class', 'email-list');
 
       jsEmailList.onclick = function (e) {
@@ -78,8 +81,8 @@ window.onload = function () {
   function regExp() {
     var notNum = isNaN(jsUserInput.value);
     var userInner = jsUserInput.value;
-    var reg1 = userInner.indexOf('@');
-    if (notNum === true && reg1 > -1) {
+    var reg2 = userInner.indexOf('@');
+    if (notNum === true && reg2 > -1) {
       return;
     } else if (notNum === true) {
       userInner = jsUserInput.value + '@qq.com';
